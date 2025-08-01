@@ -1,4 +1,4 @@
-name: Local Device Automation2
+name: Local Device Automation3
 
 on:
   workflow_dispatch:
@@ -18,6 +18,10 @@ jobs:
           java-version: '17'
 
       - name: Run Appium Tests
-        run: |
-          appium --log-level error &
-          mvn clean test
+        run: mvn clean test
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: target/allure-results
