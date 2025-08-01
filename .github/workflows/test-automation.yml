@@ -1,4 +1,4 @@
-name: Local Device Automation
+name: Local Device Automation2
 
 on:
   workflow_dispatch:
